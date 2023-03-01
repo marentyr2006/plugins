@@ -63,7 +63,7 @@ public class Discovery extends Plugin {
     totalDiscoveryServers = total;
   }
 
-  public Logger logger = new Logger("Discovery");
+  public Logger logger = new Logger("Inventio");
   private int btnID = View.generateViewId();
 
   @Override
@@ -78,7 +78,7 @@ public class Discovery extends Plugin {
       Context ctx = v.getContext();
       int baseIndex = v.indexOfChild(v.findViewById(Utils.getResId("qr_scanner", "id")));
       TextView option = new TextView(ctx, null, 0, R.i.UiKit_Settings_Item_Icon);
-      option.setText("Discovery");
+      option.setText("Inventio");
       Drawable icon = pluginIcon.mutate();
       option.setCompoundDrawablesWithIntrinsicBounds(Utils.tintToTheme(icon), null, null, null);
       option.setOnClickListener(w -> {
@@ -111,7 +111,7 @@ public class Discovery extends Plugin {
             if(!useHubAction) items.add(items.size() - 2, new GuildListItem.HubItem(false));
           }
           widgetGuildListAdapter.setItems(items, false);
-        } catch(Throwable e) {logger.error("Couldn't add discovery icon", e);}
+        } catch(Throwable e) {logger.error("Iconam inventionis adicere non potvi", e);}
       }
     }));
 
@@ -129,7 +129,7 @@ public class Discovery extends Plugin {
             Drawable compass = ResourcesCompat.getDrawable(resources, resources.getIdentifier("ic_discovery_24dp", "drawable", "com.aliucord.plugins"), null);
             compass.mutate();
             icon.setImageDrawable(compass);
-            icon.setContentDescription("Discovery");
+            icon.setContentDescription("Inventio");
             
             holder.itemView.setOnClickListener(v -> {
               Utils.openPageWithProxy(v.getContext(), new DiscoveryPage(this));
@@ -139,7 +139,7 @@ public class Discovery extends Plugin {
           if(guildListItem instanceof GuildListItem.HubItem){ FrameLayout layout = (FrameLayout) holder.itemView; ImageView icon = (ImageView) layout.getChildAt(1);icon.setImageResource(R.e.ic_hub_24dp); holder.itemView.setOnClickListener(new WidgetGuildListAdapter$onBindViewHolder$2(_this, holder, guildListItem)); }
         }
       } catch (Throwable e) {
-        logger.error("Couldnt change hub icon", e);
+        logger.error("Iconam adicere non feliciter", e);
       }
     }));
   }
